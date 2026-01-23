@@ -1,7 +1,0 @@
-[INFO] 2026-01-23T12:18:37.458Z - Starting SauceDemo login test
-[STEP] Navigating to SauceDemo login page
-[STEP] Entering username
-[STEP] Entering password
-[STEP] Clicking login button
-[STEP] Validating successful login
-[INFO] 2026-01-23T12:18:39.077Z - SauceDemo login test completed successfully
