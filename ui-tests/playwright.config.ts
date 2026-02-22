@@ -31,5 +31,5 @@ export default defineConfig({
     use: { ...devices['Desktop Safari'] },
     outputDir: 'test-results/webkit'
   }
-]
+],
 });
