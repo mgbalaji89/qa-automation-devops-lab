@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:ci": "playwright test --reporter=html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
+    "@playwright/test": "^1.42.1",
     "allure-playwright": "^3.4.5"
+	"typescript": "^5.0.0"
   },
   "dependencies": {
     "dotenv": "^17.2.3"
