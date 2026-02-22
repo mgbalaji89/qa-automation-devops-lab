@@ -15,21 +15,4 @@ export default defineConfig({
     video: 'retain-on-failure',
     trace: 'on-first-retry'
   }
-  projects: [
-  {
-    name: 'Chromium',
-    use: { ...devices['Desktop Chrome'] },
-    outputDir: 'test-results/chromium'
-  },
-  {
-    name: 'Firefox',
-    use: { ...devices['Desktop Firefox'] },
-    outputDir: 'test-results/firefox'
-  },
-  {
-    name: 'WebKit',
-    use: { ...devices['Desktop Safari'] },
-    outputDir: 'test-results/webkit'
-  }
-],
 });
