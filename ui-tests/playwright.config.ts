@@ -7,6 +7,7 @@ export default defineConfig({
   testDir: './src/tests',
   timeout: 30 * 1000,
   retries: 1,
+  workers: 4,
   reporter: [['list'], ['allure-playwright'],['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
     baseURL: process.env.BASE_URL,
