@@ -11,4 +11,4 @@ RUN npm ci
 
 COPY ui-tests/ .
 
-CMD ["npm", "run", "test:ci"]
+CMD ["npm", "run", "test"]

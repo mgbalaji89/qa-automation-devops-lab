@@ -8,23 +8,6 @@ export default defineConfig({
   timeout: 30 * 1000,
   retries: 1,
   workers: 4,
-  projects: [
-  {
-    name: 'Chromium',
-    use: { ...devices['Desktop Chrome'] },
-    outputDir: 'test-results/chromium'
-  },
-  {
-    name: 'Firefox',
-    use: { ...devices['Desktop Firefox'] },
-    outputDir: 'test-results/firefox'
-  },
-  {
-    name: 'WebKit',
-    use: { ...devices['Desktop Safari'] },
-    outputDir: 'test-results/webkit'
-  }
-],
   reporter: [['list'], ['allure-playwright'],['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
     baseURL: process.env.BASE_URL,
