@@ -17,6 +17,7 @@ pipeline {
     }
     post {
         always {
+			 sh 'ls -la ui-tests/playwright-report'
             publishHTML(target: [
                 reportDir: 'ui-tests/playwright-report',
                 reportFiles: 'index.html',
