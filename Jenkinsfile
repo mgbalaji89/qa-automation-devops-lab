@@ -19,7 +19,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
             publishHTML(target: [
-                reportDir: 'playwright-report',
+                reportDir: 'ui-tests/playwright-report',
                 reportFiles: 'index.html',
                 reportName: 'Playwright Report'
             ])
