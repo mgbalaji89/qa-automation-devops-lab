@@ -9,8 +9,8 @@ pipeline {
         stage('Install & Test') {
             steps {
 				dir('ui-tests') {
-					sh 'npm ci'
-					sh 'npm run test:ci'
+					//sh 'npm ci'
+					sh 'npx playwright test'
 				}
             }
         }
