@@ -1,30 +1,25 @@
 pipeline {
-    agent any
-
-    tools {
-        nodejs 'nodejs'
+    agent {
+        dockerfile {
+            filename 'Dockerfile'
+        }
     }
 
     stages {
-        stage('Install Dependencies') {
+        stage('Install & Test') {
             steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Run Playwright Tests') {
-            steps {
-                sh 'npx playwright test'
+                sh 'npm run test:ci'
             }
         }
     }
 
     post {
         always {
-            allure([
-                includeProperties: false,
-                jdk: '',
-                results: [[path: 'allure-results']]
+            archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
+            publishHTML(target: [
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright Report'
             ])
         }
     }
