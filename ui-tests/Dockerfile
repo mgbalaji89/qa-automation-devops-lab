@@ -14,4 +14,4 @@ COPY ui-tests/ .
 # Install Playwright browsers (safe step)
 RUN npx playwright install --with-deps
 
-CMD ["npm", "run","test"]
+CMD ["npm", "run", "test", "playwright"]
