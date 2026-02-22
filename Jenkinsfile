@@ -21,7 +21,9 @@ pipeline {
             publishHTML(target: [
                 reportDir: 'ui-tests/playwright-report',
                 reportFiles: 'index.html',
-                reportName: 'Playwright Report'
+                reportName: 'Playwright Report',
+				keepAll: true,
+                alwaysLinkToLastBuild: true
             ])
         }
     }
