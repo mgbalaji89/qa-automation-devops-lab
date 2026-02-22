@@ -17,12 +17,11 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
             publishHTML(target: [
                 reportDir: 'ui-tests/playwright-report',
                 reportFiles: 'index.html',
                 reportName: 'Playwright Report',
-				keepAll: true,
+                keepAll: true,
                 alwaysLinkToLastBuild: true
             ])
         }
