@@ -8,11 +8,13 @@ pipeline {
     stages {
         stage('Install & Test') {
             steps {
-                sh 'npm run test:ci'
+				dir('ui-tests') {
+					sh 'npm ci'
+					sh 'npm run test:ci'
+				}
             }
         }
     }
-
     post {
         always {
             archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
