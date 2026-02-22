@@ -10,6 +10,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'npm ci'
+				sh 'npm run test:ci'
             }
         }
         stage('Run Tests in Parallel') {
